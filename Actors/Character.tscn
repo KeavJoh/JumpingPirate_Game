@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://buqc6163ewvxn" path="res://Assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="5_5jq1m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l44cb"]
+height = 32.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rdkmc"]
 animations = [{
@@ -36,12 +37,15 @@ animations = [{
 script = ExtResource("1_8b7d0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_l44cb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2)
 sprite_frames = SubResource("SpriteFrames_rdkmc")
 animation = &"idle"
 frame = 1
 frame_progress = 0.875013
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
