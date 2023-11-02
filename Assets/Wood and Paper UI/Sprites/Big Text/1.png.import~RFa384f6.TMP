@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dop2d53ityjab"
-path="res://.godot/imported/2.png-f3bf2d0e164c15b98a46ba6e998f0855.ctex"
+uid="uid://v0u5ce4qfukd"
+path="res://.godot/imported/1.png-882d37020b7a709afdaef6ab201dfedf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Wood and Paper UI/Sprites/Big Text/2.png"
-dest_files=["res://.godot/imported/2.png-f3bf2d0e164c15b98a46ba6e998f0855.ctex"]
+source_file="res://Assets/Wood and Paper UI/Sprites/Big Text/1.png"
+dest_files=["res://.godot/imported/1.png-882d37020b7a709afdaef6ab201dfedf.ctex"]
 
 [params]
 
