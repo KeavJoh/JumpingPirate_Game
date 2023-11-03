@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkekfrd6t6lx7"]
+[gd_scene load_steps=9 format=3 uid="uid://dkekfrd6t6lx7"]
 
 [ext_resource type="Texture2D" uid="uid://cl3fiuh0qxwfu" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_7082e"]
 [ext_resource type="PackedScene" uid="uid://dgxifofpyvmt7" path="res://Actors/Character.tscn" id="2_5ggfr"]
 [ext_resource type="PackedScene" uid="uid://toy873tj88sd" path="res://Actors/sword.tscn" id="3_shy5j"]
 [ext_resource type="PackedScene" uid="uid://cvy6tvq6j8jik" path="res://Actors/Barrel.tscn" id="4_2bov8"]
+[ext_resource type="PackedScene" uid="uid://cfi3rmownm6n5" path="res://Actors/RedDiamond.tscn" id="5_8vpvb"]
+[ext_resource type="PackedScene" uid="uid://ba5mkhu67gex" path="res://Actors/GoldCoin.tscn" id="6_gbhby"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fugxy"]
 texture = ExtResource("1_7082e")
@@ -771,11 +773,11 @@ tile_set = SubResource("TileSet_natd2")
 format = 2
 layer_0/tile_data = PackedInt32Array(65506, 0, 0, 65507, 65536, 0, 65508, 131072, 0, 65509, 196608, 0, 65510, 262144, 0, 65511, 524288, 9, 65512, 589824, 9, 65513, 65536, 0, 65514, 131072, 0, 65515, 196608, 0, 65516, 262144, 0, 65517, 327680, 0, 65518, 524288, 9, 65519, 589824, 9, 65520, 131072, 0, 65521, 196608, 0, 65522, 262144, 0, 65523, 327680, 0, 65524, 0, 0, 65525, 65536, 0, 65526, 131072, 0, 65527, 196608, 0, 65528, 262144, 0, 65529, 327680, 0, 65530, 524288, 9, 65531, 589824, 9, 65532, 131072, 0, 65533, 196608, 0, 65534, 262144, 0, 65535, 327680, 0, 0, 0, 0, 1, 65536, 0, 2, 131072, 0, 3, 196608, 0, 4, 262144, 0, 5, 327680, 0, 6, 0, 0, 7, 65536, 0, 8, 131072, 0, 9, 196608, 0, 10, 262144, 0, 11, 327680, 0, 12, 0, 0, 13, 65536, 0, 14, 524288, 9, 15, 589824, 9, 16, 262144, 0, 17, 327680, 0, 18, 0, 0, 19, 65536, 0, 20, 131072, 0, 21, 196608, 0, 22, 262144, 0, 23, 327680, 0, -65522, 524288, 8, -65521, 589824, 8, -6, 524288, 8, -5, 589824, 8, -18, 524288, 8, -17, 589824, 8, -25, 524288, 8, -24, 589824, 8, -65563, 524288, 8, -27, 524288, 9, -65562, 589824, 8, -26, 589824, 9, -131101, 524288, 8, -65565, 524288, 9, -131100, 589824, 8, -65564, 589824, 9, -196639, 524288, 8, -131103, 524288, 9, -196638, 589824, 8, -131102, 589824, 9)
 
-[node name="Character" parent="." instance=ExtResource("2_5ggfr")]
-position = Vector2(-480, -92)
+[node name="RedDiamond" parent="." instance=ExtResource("5_8vpvb")]
+position = Vector2(-191, -13)
 
-[node name="Sword" parent="." instance=ExtResource("3_shy5j")]
-position = Vector2(-274, -27)
+[node name="GoldCoin" parent="." instance=ExtResource("6_gbhby")]
+position = Vector2(42, -15)
 
 [node name="Barrel" parent="." instance=ExtResource("4_2bov8")]
 position = Vector2(-125, -10)
@@ -783,3 +785,9 @@ position = Vector2(-125, -10)
 [node name="Barrel2" parent="." instance=ExtResource("4_2bov8")]
 position = Vector2(164, -10)
 hp = 8
+
+[node name="Character" parent="." instance=ExtResource("2_5ggfr")]
+position = Vector2(-480, -92)
+
+[node name="Sword" parent="." instance=ExtResource("3_shy5j")]
+position = Vector2(-274, -27)
