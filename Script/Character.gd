@@ -9,22 +9,30 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var animSprite = $AnimatedSprite2D
 
+var hasSword = false
+
 func _physics_process(delta):
+	
+	var swordExtra = "_nos"
+	
+	if(hasSword):
+		swordExtra = "_hs"
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
 		# If character jump or fall, run fall or jump animation
 		if(velocity.y > 0):
-			animSprite.play("fall")
+			animSprite.play("fall" + swordExtra)
 		else:
-			animSprite.play("jump")
+			animSprite.play("jump" + swordExtra)
 	#If character not jump or fall, run idle or run animation
 	else:
 		if(velocity.x == 0):
-			animSprite.play("idle")
+			animSprite.play("idle" + swordExtra)
 		else:
-			animSprite.play("run")
+			animSprite.play("run" + swordExtra)
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
