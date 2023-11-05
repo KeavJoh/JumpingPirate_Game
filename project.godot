@@ -14,6 +14,10 @@ config/name="JumpingPirate"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Script/Global.gd"
+
 [display]
 
 window/stretch/scale=2.0
