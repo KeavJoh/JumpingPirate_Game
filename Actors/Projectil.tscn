@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlc7er0wr5vc2"]
+
+[ext_resource type="Script" path="res://Script/Projectil.gd" id="1_uwj1b"]
+[ext_resource type="Texture2D" uid="uid://b2u7f2f6vjjq1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_jtct1"]
+[ext_resource type="Texture2D" uid="uid://yokdggly2yqq" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/2.png" id="3_xd07m"]
+[ext_resource type="Texture2D" uid="uid://rxlog6j0g8ep" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/3.png" id="4_qw3rj"]
+[ext_resource type="Texture2D" uid="uid://bc3yksnfsalch" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/4.png" id="5_g46ri"]
+[ext_resource type="Texture2D" uid="uid://b22atsawbhdw1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/5.png" id="6_xrco0"]
+[ext_resource type="Texture2D" uid="uid://26u26d2oiiay" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="7_kf7cr"]
+[ext_resource type="Texture2D" uid="uid://dgka4wxye1rff" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="8_rbqo2"]
+[ext_resource type="Texture2D" uid="uid://dtbcv32w4e8q5" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="9_byfm3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ohys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jtct1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xd07m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qw3rj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g46ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xrco0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kf7cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rbqo2")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_byfm3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Projectil" type="Node2D"]
+script = ExtResource("1_uwj1b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3ohys")
+animation = &"explosion"
+frame = 6
+frame_progress = 1.0
