@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkekfrd6t6lx7"]
+[gd_scene load_steps=7 format=3 uid="uid://dkekfrd6t6lx7"]
 
 [ext_resource type="Texture2D" uid="uid://cl3fiuh0qxwfu" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_7082e"]
 [ext_resource type="PackedScene" uid="uid://dgxifofpyvmt7" path="res://Actors/Character.tscn" id="2_5ggfr"]
 [ext_resource type="PackedScene" uid="uid://cvkfn2hret2vl" path="res://Actors/Shooter.tscn" id="3_76xqa"]
+[ext_resource type="PackedScene" uid="uid://dlc7er0wr5vc2" path="res://Actors/Projectil.tscn" id="4_8hs5n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fugxy"]
 texture = ExtResource("1_7082e")
@@ -776,3 +777,7 @@ position = Vector2(-480, -92)
 [node name="Shooter" parent="." instance=ExtResource("3_76xqa")]
 position = Vector2(68, -13)
 lookLeft = false
+
+[node name="Projectil" parent="." instance=ExtResource("4_8hs5n")]
+position = Vector2(-280, -24)
+speed = 0
