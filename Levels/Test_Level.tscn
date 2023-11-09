@@ -781,3 +781,10 @@ lookLeft = false
 [node name="Projectil" parent="." instance=ExtResource("4_8hs5n")]
 position = Vector2(-280, -24)
 speed = 0
+
+[node name="Shooter2" parent="." instance=ExtResource("3_76xqa")]
+position = Vector2(68, -13)
+
+[node name="Shooter3" parent="." instance=ExtResource("3_76xqa")]
+position = Vector2(69, -39)
+projectilRange = 200

@@ -5,6 +5,8 @@ extends Node2D
 @export var lookLeft = true
 @export var damageValue = 1
 @export var projectilSpeed = 1
+@export var projectilDamage = 1
+@export var projectilRange = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,6 +37,8 @@ func spawnProjectil():
 	var projectil = preload("res://Actors/Projectil.tscn").instantiate()
 	
 	projectil.speed = projectilSpeed
+	projectil.damage = projectilDamage
+	projectil.range = projectilRange
 	
 	if(lookLeft == false):
 		projectil.directionLeft = false

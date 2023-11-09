@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlc7er0wr5vc2"]
+[gd_scene load_steps=12 format=3 uid="uid://dlc7er0wr5vc2"]
 
 [ext_resource type="Script" path="res://Script/Projectil.gd" id="1_uwj1b"]
 [ext_resource type="Texture2D" uid="uid://b2u7f2f6vjjq1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_jtct1"]
@@ -47,6 +47,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bm5ng"]
+radius = 7.0
+
 [node name="Projectil" type="Node2D"]
 script = ExtResource("1_uwj1b")
 
@@ -54,3 +57,10 @@ script = ExtResource("1_uwj1b")
 sprite_frames = SubResource("SpriteFrames_3ohys")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bm5ng")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
