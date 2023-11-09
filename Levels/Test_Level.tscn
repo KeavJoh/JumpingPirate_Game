@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkekfrd6t6lx7"]
+[gd_scene load_steps=9 format=3 uid="uid://dkekfrd6t6lx7"]
 
 [ext_resource type="Texture2D" uid="uid://cl3fiuh0qxwfu" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_7082e"]
 [ext_resource type="PackedScene" uid="uid://dgxifofpyvmt7" path="res://Actors/Character.tscn" id="2_5ggfr"]
-[ext_resource type="PackedScene" uid="uid://cvkfn2hret2vl" path="res://Actors/Shooter.tscn" id="3_76xqa"]
-[ext_resource type="PackedScene" uid="uid://dlc7er0wr5vc2" path="res://Actors/Projectil.tscn" id="4_8hs5n"]
+[ext_resource type="PackedScene" uid="uid://bo1rk3hdxo3r" path="res://Actors/Shooter_Totem_1.tscn" id="4_toeu1"]
+[ext_resource type="PackedScene" uid="uid://dcr8egd1a0wi5" path="res://Actors/Shooter_Cannon.tscn" id="5_d5apw"]
+[ext_resource type="PackedScene" uid="uid://bth7q3oe44tvx" path="res://Actors/Shooter_Totem_2.tscn" id="5_hwgyk"]
+[ext_resource type="PackedScene" uid="uid://c14ls3jeslcgt" path="res://Actors/Shooter_Totem_3.tscn" id="6_yv8c5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fugxy"]
 texture = ExtResource("1_7082e")
@@ -774,17 +776,17 @@ layer_0/tile_data = PackedInt32Array(65506, 0, 0, 65507, 65536, 0, 65508, 131072
 [node name="Character" parent="." instance=ExtResource("2_5ggfr")]
 position = Vector2(-480, -92)
 
-[node name="Shooter" parent="." instance=ExtResource("3_76xqa")]
-position = Vector2(68, -13)
-lookLeft = false
+[node name="Shooter_Cannon" parent="." instance=ExtResource("5_d5apw")]
+position = Vector2(-75, -29)
 
-[node name="Projectil" parent="." instance=ExtResource("4_8hs5n")]
-position = Vector2(-280, -24)
-speed = 0
+[node name="Shooter_Totem_1" parent="." instance=ExtResource("4_toeu1")]
+position = Vector2(106, -4)
+projectilType = 1
 
-[node name="Shooter2" parent="." instance=ExtResource("3_76xqa")]
-position = Vector2(68, -13)
+[node name="Shooter_Totem_2" parent="." instance=ExtResource("5_hwgyk")]
+position = Vector2(235, -33)
+projectilType = 1
 
-[node name="Shooter3" parent="." instance=ExtResource("3_76xqa")]
-position = Vector2(69, -39)
-projectilRange = 200
+[node name="Shooter_Totem_3" parent="." instance=ExtResource("6_yv8c5")]
+position = Vector2(232, -66)
+projectilType = 1

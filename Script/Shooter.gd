@@ -7,6 +7,7 @@ extends Node2D
 @export var projectilSpeed = 1
 @export var projectilDamage = 1
 @export var projectilRange = 100
+@export var projectilType = Global.projectilTypes.CANNON
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,10 +25,13 @@ func _ready():
 		fire()
 
 func fire():
-	$FireEffect.visible = true
 	$AnimatedSprite2D.play("fire")
 	await get_tree().create_timer(0.2).timeout
-	$FireEffect.play("fireEffect")
+	
+	if(projectilType == 0):
+		$FireEffect.visible = true
+		$FireEffect.play("fireEffect")
+		
 	spawnProjectil()
 	await get_tree().create_timer(0.3).timeout
 	$FireEffect.visible = false
@@ -39,6 +43,8 @@ func spawnProjectil():
 	projectil.speed = projectilSpeed
 	projectil.damage = projectilDamage
 	projectil.range = projectilRange
+	projectil.type = projectilType
+	projectil.lookLeft = lookLeft
 	
 	if(lookLeft == false):
 		projectil.directionLeft = false

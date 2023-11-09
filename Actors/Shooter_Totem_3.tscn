@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=3 uid="uid://c14ls3jeslcgt"]
+
+[ext_resource type="PackedScene" uid="uid://cvkfn2hret2vl" path="res://Actors/Shooter.tscn" id="1_hoh6i"]
+[ext_resource type="Texture2D" uid="uid://ca42bybi2slct" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/1.png" id="2_2vrcm"]
+[ext_resource type="Texture2D" uid="uid://dgx3j7kb6wtck" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/2.png" id="3_44a7g"]
+[ext_resource type="Texture2D" uid="uid://cr41mcrlqhbo2" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/3.png" id="4_4anp5"]
+[ext_resource type="Texture2D" uid="uid://cdom7xqxsuqfj" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/4.png" id="5_h685a"]
+[ext_resource type="Texture2D" uid="uid://d0kgm43myix53" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/5.png" id="6_d0te5"]
+[ext_resource type="Texture2D" uid="uid://csybju05i0psf" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Attack 1/6.png" id="7_wj78c"]
+[ext_resource type="Texture2D" uid="uid://78sgyjktfyau" path="res://Assets/Shooter Traps/Sprites/Totems/Head 3/Idle 1/1.png" id="8_56ida"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ixsu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2vrcm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_44a7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4anp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h685a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d0te5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wj78c")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_56ida")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Shooter_Totem_3" instance=ExtResource("1_hoh6i")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(2, -10)
+sprite_frames = SubResource("SpriteFrames_0ixsu")
+animation = &"fire"

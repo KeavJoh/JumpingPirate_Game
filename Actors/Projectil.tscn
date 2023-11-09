@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlc7er0wr5vc2"]
+[gd_scene load_steps=16 format=3 uid="uid://dlc7er0wr5vc2"]
 
 [ext_resource type="Script" path="res://Script/Projectil.gd" id="1_uwj1b"]
 [ext_resource type="Texture2D" uid="uid://b2u7f2f6vjjq1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/1.png" id="2_jtct1"]
@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b22atsawbhdw1" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/5.png" id="6_xrco0"]
 [ext_resource type="Texture2D" uid="uid://26u26d2oiiay" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/6.png" id="7_kf7cr"]
 [ext_resource type="Texture2D" uid="uid://dgka4wxye1rff" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Explosion/7.png" id="8_rbqo2"]
+[ext_resource type="Texture2D" uid="uid://tuu5ulttorvn" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/1.png" id="9_bwxeo"]
 [ext_resource type="Texture2D" uid="uid://dtbcv32w4e8q5" path="res://Assets/Shooter Traps/Sprites/Cannon/Cannon Ball Idle/1.png" id="9_byfm3"]
+[ext_resource type="Texture2D" uid="uid://b5orkukkrie1r" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="10_0xf5r"]
+[ext_resource type="Texture2D" uid="uid://c5ylh3wqb3myh" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="10_uxjoc"]
+[ext_resource type="Texture2D" uid="uid://bjhu38uwbvvgi" path="res://Assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="11_sf5dq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3ohys"]
 animations = [{
@@ -35,7 +39,21 @@ animations = [{
 "texture": ExtResource("8_rbqo2")
 }],
 "loop": false,
-"name": &"explosion",
+"name": &"explosionCannon",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_bwxeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uxjoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sf5dq")
+}],
+"loop": false,
+"name": &"explosionSpike",
 "speed": 10.0
 }, {
 "frames": [{
@@ -43,7 +61,15 @@ animations = [{
 "texture": ExtResource("9_byfm3")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idleCannon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0xf5r")
+}],
+"loop": true,
+"name": &"idleSpike",
 "speed": 5.0
 }]
 
@@ -55,8 +81,7 @@ script = ExtResource("1_uwj1b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3ohys")
-animation = &"idle"
-autoplay = "idle"
+animation = &"explosionSpike"
 
 [node name="Area2D" type="Area2D" parent="."]
 
