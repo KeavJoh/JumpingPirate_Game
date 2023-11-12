@@ -8,14 +8,30 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var hostileHp = 3
+@export var hostileDamage = 1
 var runDirection = 1
 var isDead = false
+var playerIsInDamageZone = false
 
 func _ready():
 	checkStatus()
 
 func run():
 	$AnimatedSprite2D.play("run")
+	
+func attack():
+	if(!isDead):
+		runDirection = 0
+		await get_tree().create_timer(1).timeout
+		if(playerIsInDamageZone and !isDead):
+			$AnimatedSprite2D.play("attack")
+			await get_tree().create_timer(0.2).timeout
+			Global.playerDamage(hostileDamage)
+			runDirection = 1
+		else:
+			runDirection = 1
+			
+		checkStatus()
 
 func _physics_process(delta):
 	if(!isDead):
@@ -39,10 +55,14 @@ func checkStatus():
 		await get_tree().create_timer(3).timeout
 		queue_free()
 	else:
-		run()
+		if(playerIsInDamageZone):
+			attack()
+		else:
+			run()
 
 func _on_animated_sprite_2d_animation_finished():
-	checkStatus()
+	if(!isDead):
+		checkStatus()
 
 #Hit
 func _on_area_2d_area_entered(area):
@@ -52,4 +72,16 @@ func _on_area_2d_area_entered(area):
 		$AnimatedSprite2D.play("hit")
 		await get_tree().create_timer(1).timeout
 		runDirection = 1
+		checkStatus()
+
+
+func _on_area_2d_body_entered(body):
+	if(!isDead and body.is_in_group("Player")):
+		playerIsInDamageZone = true
+		checkStatus()
+
+
+func _on_area_2d_body_exited(body):
+	if(!isDead and body.is_in_group("Player")):
+		playerIsInDamageZone = false
 		checkStatus()
