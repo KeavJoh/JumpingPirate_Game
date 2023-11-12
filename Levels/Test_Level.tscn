@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkekfrd6t6lx7"]
+[gd_scene load_steps=10 format=3 uid="uid://dkekfrd6t6lx7"]
 
 [ext_resource type="Texture2D" uid="uid://cl3fiuh0qxwfu" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_7082e"]
 [ext_resource type="PackedScene" uid="uid://dgxifofpyvmt7" path="res://Actors/Character.tscn" id="2_5ggfr"]
-[ext_resource type="PackedScene" uid="uid://bo1rk3hdxo3r" path="res://Actors/Shooter_Totem_1.tscn" id="4_toeu1"]
-[ext_resource type="PackedScene" uid="uid://dcr8egd1a0wi5" path="res://Actors/Shooter_Cannon.tscn" id="5_d5apw"]
-[ext_resource type="PackedScene" uid="uid://bth7q3oe44tvx" path="res://Actors/Shooter_Totem_2.tscn" id="5_hwgyk"]
-[ext_resource type="PackedScene" uid="uid://c14ls3jeslcgt" path="res://Actors/Shooter_Totem_3.tscn" id="6_yv8c5"]
-[ext_resource type="PackedScene" uid="uid://c6ggd8s8hwhg1" path="res://Actors/Hostile_Crabby.tscn" id="7_7brdg"]
-[ext_resource type="PackedScene" uid="uid://toy873tj88sd" path="res://Actors/sword.tscn" id="8_4jjra"]
-[ext_resource type="PackedScene" uid="uid://clm3vjbofkr15" path="res://Actors/Hostile_Star.tscn" id="9_7mu08"]
+[ext_resource type="PackedScene" uid="uid://bbchbavnekt0l" path="res://LevelElements/BackPalmTree.tscn" id="3_nojwm"]
+[ext_resource type="PackedScene" uid="uid://dlqnbd8xy7df7" path="res://LevelElements/BackPalmTreeLeft.tscn" id="4_emsoe"]
+[ext_resource type="PackedScene" uid="uid://cx4udhgk04exr" path="res://LevelElements/BackPalmTreeRight.tscn" id="5_dkqes"]
+[ext_resource type="PackedScene" uid="uid://dm6gxvfo5wr26" path="res://LevelElements/FrontPalmTree.tscn" id="6_gybip"]
+[ext_resource type="PackedScene" uid="uid://coqox1gw4vk5j" path="res://Actors/Spikes.tscn" id="7_a1blx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fugxy"]
 texture = ExtResource("1_7082e")
@@ -776,29 +774,20 @@ tile_set = SubResource("TileSet_natd2")
 format = 2
 layer_0/tile_data = PackedInt32Array(65506, 0, 0, 65507, 65536, 0, 65508, 131072, 0, 65509, 196608, 0, 65510, 262144, 0, 65511, 524288, 9, 65512, 589824, 9, 65513, 65536, 0, 65514, 131072, 0, 65515, 196608, 0, 65516, 262144, 0, 65517, 327680, 0, 65518, 524288, 9, 65519, 589824, 9, 65520, 131072, 0, 65521, 196608, 0, 65522, 262144, 0, 65523, 327680, 0, 65524, 0, 0, 65525, 65536, 0, 65526, 131072, 0, 65527, 196608, 0, 65528, 262144, 0, 65529, 327680, 0, 65530, 524288, 9, 65531, 589824, 9, 65532, 131072, 0, 65533, 196608, 0, 65534, 262144, 0, 65535, 327680, 0, 0, 0, 0, 1, 65536, 0, 2, 131072, 0, 3, 196608, 0, 4, 262144, 0, 5, 327680, 0, 6, 0, 0, 7, 65536, 0, 8, 131072, 0, 9, 196608, 0, 10, 262144, 0, 11, 327680, 0, 12, 0, 0, 13, 65536, 0, 14, 524288, 9, 15, 589824, 9, 16, 262144, 0, 17, 327680, 0, 18, 0, 0, 19, 65536, 0, 20, 131072, 0, 21, 196608, 0, 22, 262144, 0, 23, 327680, 0, -65522, 524288, 8, -65521, 589824, 8, -6, 524288, 8, -5, 589824, 8, -18, 524288, 8, -17, 589824, 8, -25, 524288, 8, -24, 589824, 8, -65563, 524288, 8, -27, 524288, 9, -65562, 589824, 8, -26, 589824, 9, -131101, 524288, 8, -65565, 524288, 9, -131100, 589824, 8, -65564, 589824, 9, -196639, 524288, 8, -131103, 524288, 9, -196638, 589824, 8, -131102, 589824, 9)
 
+[node name="BackPalmTree" parent="." instance=ExtResource("3_nojwm")]
+position = Vector2(-273, -48)
+
+[node name="BackPalmTreeLeft" parent="." instance=ExtResource("4_emsoe")]
+position = Vector2(-121, -29)
+
+[node name="BackPalmTreeRight" parent="." instance=ExtResource("5_dkqes")]
+position = Vector2(-39, -29)
+
 [node name="Character" parent="." instance=ExtResource("2_5ggfr")]
 position = Vector2(-480, -92)
 
-[node name="Shooter_Cannon" parent="." instance=ExtResource("5_d5apw")]
-position = Vector2(-75, -29)
+[node name="FrontPalmTree" parent="." instance=ExtResource("6_gybip")]
+position = Vector2(-192, -16)
 
-[node name="Shooter_Totem_1" parent="." instance=ExtResource("4_toeu1")]
-position = Vector2(106, -4)
-projectilType = 1
-
-[node name="Shooter_Totem_2" parent="." instance=ExtResource("5_hwgyk")]
-position = Vector2(235, -33)
-projectilType = 1
-
-[node name="Shooter_Totem_3" parent="." instance=ExtResource("6_yv8c5")]
-position = Vector2(232, -66)
-projectilType = 1
-
-[node name="Hostile_Crabby2" parent="." instance=ExtResource("7_7brdg")]
-position = Vector2(-132, -12)
-
-[node name="Sword" parent="." instance=ExtResource("8_4jjra")]
-position = Vector2(-273, -23)
-
-[node name="Hostile_Star" parent="." instance=ExtResource("9_7mu08")]
-position = Vector2(55, -11)
+[node name="Spikes" parent="." instance=ExtResource("7_a1blx")]
+position = Vector2(-333, 0)
