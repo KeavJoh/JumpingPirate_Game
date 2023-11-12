@@ -1,0 +1,127 @@
+[gd_scene load_steps=23 format=3 uid="uid://clm3vjbofkr15"]
+
+[ext_resource type="Script" path="res://Script/Hostile_Crabby.gd" id="1_t2mns"]
+[ext_resource type="Texture2D" uid="uid://qpifwq1kid8u" path="res://Assets/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 01.png" id="2_rqih3"]
+[ext_resource type="Texture2D" uid="uid://cdfb0mv4ry87s" path="res://Assets/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 02.png" id="3_uugon"]
+[ext_resource type="Texture2D" uid="uid://cyxmpt7heelyi" path="res://Assets/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 03.png" id="4_ipfsd"]
+[ext_resource type="Texture2D" uid="uid://dvk2ehox1fkth" path="res://Assets/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 04.png" id="5_wp754"]
+[ext_resource type="Texture2D" uid="uid://c3g8f7cundgr7" path="res://Assets/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 01.png" id="6_wuhep"]
+[ext_resource type="Texture2D" uid="uid://di5x40g4bcv0c" path="res://Assets/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 02.png" id="7_22tiv"]
+[ext_resource type="Texture2D" uid="uid://cqdt5qx0bl7m2" path="res://Assets/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 03.png" id="8_oo8bs"]
+[ext_resource type="Texture2D" uid="uid://mdhel4vrkk53" path="res://Assets/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 04.png" id="9_83a88"]
+[ext_resource type="Texture2D" uid="uid://b6b5odirfebxp" path="res://Assets/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 01.png" id="10_ed8t1"]
+[ext_resource type="Texture2D" uid="uid://c050nhmsw62mr" path="res://Assets/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 02.png" id="11_cmaqf"]
+[ext_resource type="Texture2D" uid="uid://dxil6nc4coked" path="res://Assets/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 03.png" id="12_bkche"]
+[ext_resource type="Texture2D" uid="uid://5lftewe86u3s" path="res://Assets/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 04.png" id="13_a13f4"]
+[ext_resource type="Texture2D" uid="uid://b7m5ytqx5k23l" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 01.png" id="14_xcaoh"]
+[ext_resource type="Texture2D" uid="uid://c5wu6sv0pcykt" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 02.png" id="15_ennlf"]
+[ext_resource type="Texture2D" uid="uid://c7vjwq3sxkfoa" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 03.png" id="16_o8wyy"]
+[ext_resource type="Texture2D" uid="uid://datq15arukas7" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 04.png" id="17_ebvp6"]
+[ext_resource type="Texture2D" uid="uid://ybnfie6tf4kc" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 05.png" id="18_2p0lo"]
+[ext_resource type="Texture2D" uid="uid://ox8f16td1eqy" path="res://Assets/The Crusty Crew/Sprites/Pink Star/02-Run/Run 06.png" id="19_isob7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igfs0"]
+size = Vector2(40, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6iyfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rqih3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uugon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ipfsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wp754")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wuhep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_22tiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oo8bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_83a88")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ed8t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cmaqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bkche")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a13f4")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_xcaoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ennlf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_o8wyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ebvp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2p0lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_isob7")
+}],
+"loop": false,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a53f"]
+size = Vector2(56, 22)
+
+[node name="Hostile_Star" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_t2mns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_igfs0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6iyfv")
+animation = &"attack"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_7a53f")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

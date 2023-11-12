@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkekfrd6t6lx7"]
+[gd_scene load_steps=12 format=3 uid="uid://dkekfrd6t6lx7"]
 
 [ext_resource type="Texture2D" uid="uid://cl3fiuh0qxwfu" path="res://Assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_7082e"]
 [ext_resource type="PackedScene" uid="uid://dgxifofpyvmt7" path="res://Actors/Character.tscn" id="2_5ggfr"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c14ls3jeslcgt" path="res://Actors/Shooter_Totem_3.tscn" id="6_yv8c5"]
 [ext_resource type="PackedScene" uid="uid://c6ggd8s8hwhg1" path="res://Actors/Hostile_Crabby.tscn" id="7_7brdg"]
 [ext_resource type="PackedScene" uid="uid://toy873tj88sd" path="res://Actors/sword.tscn" id="8_4jjra"]
+[ext_resource type="PackedScene" uid="uid://clm3vjbofkr15" path="res://Actors/Hostile_Star.tscn" id="9_7mu08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fugxy"]
 texture = ExtResource("1_7082e")
@@ -798,3 +799,6 @@ position = Vector2(-132, -12)
 
 [node name="Sword" parent="." instance=ExtResource("8_4jjra")]
 position = Vector2(-273, -23)
+
+[node name="Hostile_Star" parent="." instance=ExtResource("9_7mu08")]
+position = Vector2(55, -11)
